@@ -1,0 +1,416 @@
+[20/05/2026 16:54] ⚜: <!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Education Hub</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg,#050816,#0a1026,#111827);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    header::before{
+      content:'';
+      position:absolute;
+      width:600px;
+      height:600px;
+      background:rgba(0,255,255,0.08);
+      border-radius:50%;
+      filter:blur(120px);
+      top:-150px;
+      left:-150px;
+    }
+
+    header::after{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:rgba(0,140,255,0.12);
+      border-radius:50%;
+      filter:blur(120px);
+      bottom:-150px;
+      right:-150px;
+    }
+
+    .hero{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:70px;
+      font-weight:800;
+      background:linear-gradient(to right,#00f0ff,#ffffff,#5da8ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:20px;
+      text-shadow:0 0 30px rgba(0,255,255,0.4);
+    }
+
+    .hero p{
+      font-size:22px;
+      line-height:1.8;
+      color:#d1d5db;
+    }
+
+    .teacher-box{
+      margin-top:40px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.2);
+      padding:25px;
+      border-radius:25px;
+      backdrop-filter:blur(15px);
+      box-shadow:0 0 30px rgba(0,255,255,0.2);
+      animation:glow 3s infinite alternate;
+    }
+
+    @keyframes glow{
+      from{
+        box-shadow:0 0 20px rgba(0,255,255,0.2);
+      }
+      to{
+        box-shadow:0 0 50px rgba(0,255,255,0.5);
+      }
+    }
+
+    .teacher-box h2{
+      color:#00e5ff;
+      font-size:35px;
+      margin-bottom:10px;
+    }
+
+    .sections{
+      padding:80px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .tabs{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-bottom:50px;
+    }
+
+    .tab-btn{
+      padding:18px 35px;
+      border:none;
+      border-radius:18px;
+      background:rgba(255,255,255,0.08);
+      color:white;
+      font-size:20px;
+      cursor:pointer;
+      transition:0.4s;
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .tab-btn:hover{
+      transform:translateY(-5px) scale(1.05);
+      background:#00d9ff;
+      color:black;
+      box-shadow:0 0 30px rgba(0,217,255,0.6);
+    }
+
+    .content{
+      display:none;
+      animation:fade 0.6s ease;
+    }
+
+    .content.active{
+      display:block;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .card{
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:30px;
+      padding:40px;
+      backdrop-filter:blur(15px);
+      box-shadow:0 0 25px rgba(255,255,255,0.08);
+      line-height:1.9;
+      font-size:19px;
+      color:#e5e7eb;
+    }
+
+    .card h2{
+      font-size:40px;
+      margin-bottom:25px;
+      color:#00e5ff;
+    }
+
+    .card ul{
+      margin-left:20px;
+      margin-top:20px;
+    }
+
+    .card li{
+      margin-bottom:15px;
+    }
+
+    .english-email{
+      margin-top:35px;
+      background:rgba(0,0,0,0.3);
+      padding:25px;
+      border-radius:20px;
+      border-left:5px solid #00e5ff;
+    }
+
+    footer{
+      padding:40px;
+      text-align:center;
+      background:#050816;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    footer a{
+      color:#00e5ff;
+      text-decoration:none;
+      font-size:22px;
+      transition:0.3s;
+    }
+[20/05/2026 16:54] ⚜: footer a:hover{
+      color:white;
+      text-shadow:0 0 20px cyan;
+    }
+
+    .highlight{
+      color:#00e5ff;
+      font-weight:bold;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <h1>PREMIUM EDUCATION HUB</h1>
+
+    <p>
+      IELTS • Diplomatiya • Informatika • Premium Learning Experience
+    </p>
+
+    <div class="teacher-box">
+      <h2>👨‍🏫 Informatika Ustozingiz</h2>
+      <p>
+        Ushbu web sahifa maxsus 
+        <span class="highlight">Dilshod</span> ustoz uchun alohida premium dizaynda tayyorlandi.
+      </p>
+    </div>
+  </div>
+</header>
+
+<section class="sections">
+
+  <div class="tabs">
+    <button class="tab-btn" onclick="showTab('lavrov')">
+      Sergey Lavrov
+    </button>
+
+    <button class="tab-btn" onclick="showTab('english')">
+      English & IELTS
+    </button>
+
+    <button class="tab-btn" onclick="showTab('it')">
+      Informatika
+    </button>
+  </div>
+
+  <!-- Sergey Lavrov -->
+  <div class="content active" id="lavrov">
+    <div class="card">
+
+      <h2>🌍 Sergey Lavrov</h2>
+
+      <p>
+        Sergey Lavrov — Rossiyaning uzoq yillik tashqi ishlar vaziri bo‘lib,
+        2004-yildan beri ushbu lavozimda faoliyat yuritadi.
+        U dunyodagi eng tajribali diplomatlar qatoriga kiradi.
+      </p>
+
+      <ul>
+        <li>
+          🎓 1968–1972: Moskva davlat xalqaro munosabatlar instituti (MGIMO)
+        </li>
+
+        <li>
+          📚 Mutaxassisligi: xalqaro munosabatlar va diplomatiya
+        </li>
+
+        <li>
+          🌐 1994–2004: Rossiyaning BMTdagi doimiy vakili
+        </li>
+
+        <li>
+          🏛️ 2004–hozirgacha: Rossiya tashqi ishlar vaziri
+        </li>
+
+        <li>
+          ⚡ Kuchli notiqlik va muzokara olib borish qobiliyati
+        </li>
+
+        <li>
+          🌍 Rossiya tashqi siyosatining asosiy yuzlaridan biri
+        </li>
+
+        <li>
+          🧠 Ko‘p tillarni biladi va xalqaro maydonda juda faol
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- English -->
+  <div class="content" id="english">
+    <div class="card">
+
+      <h2>🇬🇧 English & IELTS</h2>
+
+      <p>
+        IELTS — xalqaro ingliz tili imtihoni bo‘lib,
+        speaking, listening, reading va writing ko‘nikmalarini baholaydi.
+      </p>
+
+      <ul>
+        <li>✅ IELTS Band 9 uchun advanced vocabulary juda muhim</li>
+        <li>✅ Speakingda fluency va pronunciation katta rol o‘ynaydi</li>
+        <li>✅ Writingda formal structure va linking words kerak bo‘ladi</li>
+        <li>✅ Reading uchun tez analiz qilish qobiliyati zarur</li>
+        <li>✅ Listeningda concentration va prediction muhim</li>
+      </ul>
+
+      <div class="english-email">
+
+        <h3>📧 Formal Email Example</h3>
+
+        <br>
+
+        <p>
+          Dear Secretary,<br><br>
+
+          I have just received your email regarding the theatre trip to London.
+          Thank you for giving me the opportunity to share my thoughts about it.<br><br>
+
+          I would definitely like to join this exciting trip because it would allow us to spend quality time together and enjoy an unforgettable experience.<br><br>
+
+          One of the main reasons why I am interested in attending is that I am passionate about musicals and theatre performances.<br><br>
+
+          In addition, trips like this help people build stronger friendships and create wonderful memories.<br><br>
+
+          Thank you once again for organising this event.<br><br>
+
+          Best regards,<br>
+          Full Name
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Informatika -->
+  <div class="content" id="it">
+    <div class="card">
+
+      <h2>💻 Informatika</h2>
+
+      <p>
+        Informatika — axborotlarni qayta ishlash,
+        saqlash, uzatish va boshqarish haqidagi fan.
+      </p>
+
+      <ul>
+        <li>🖥️ Kompyuter arxitekturasi</li>
+        <li>🌐 Internet va tarmoqlar</li>
+[20/05/2026 16:54] ⚜: <li>💾 Ma’lumotlar bazasi</li>
+        <li>📱 Mobil ilova yaratish</li>
+        <li>🤖 Sun’iy intellekt</li>
+        <li>🔐 Kiberxavfsizlik</li>
+        <li>⚙️ Algoritmlar va dasturlash</li>
+        <li>🎮 O‘yin yaratish texnologiyalari</li>
+        <li>☁️ Cloud texnologiyalar</li>
+        <li>🧠 Machine Learning va Deep Learning</li>
+        <li>📊 Data Science</li>
+        <li>🧩 Python, JavaScript, C++ tillari</li>
+        <li>🌍 Web development: HTML, CSS, JavaScript</li>
+      </ul>
+
+      <br>
+
+      <p>
+        Zamonaviy informatika inson hayotining barcha sohalariga kirib kelgan.
+        Dasturchilar, AI mutaxassislari va cyber security ekspertlari
+        bugungi dunyodagi eng talab yuqori kasblardan hisoblanadi.
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
+<footer>
+
+  <h2>📱 Telegram</h2>
+
+  <br>
+
+  <a href="https://t.me/a20100510" target="_blank">
+    @a20100510
+  </a>
+
+</footer>
+
+<script>
+
+function showTab(id){
+
+  let contents = document.querySelectorAll('.content');
+
+  contents.forEach(content=>{
+    content.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+}
+
+</script>
+
+</body>
+</html>
